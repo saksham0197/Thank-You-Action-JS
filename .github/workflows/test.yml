@@ -4,12 +4,7 @@ on:
   pull_request:
     types: [opened]
 
-jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: ./
-        with:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-          TENOR_TOKEN: ${{secrets.TENOR_TOKEN}}
+job:
+
+- name: Test with Maven
+        run: mvn -B test --file pom.xml
