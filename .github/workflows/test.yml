@@ -1,7 +1,7 @@
 name: Test
 
 on:
-  workflow_call:
+  repository_dispatch:
     inputs:
       username:
         required: true
