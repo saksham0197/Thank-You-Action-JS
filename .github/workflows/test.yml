@@ -3,18 +3,15 @@ name: test
 on:
   repository_dispatch:
    types: [setup]
-  
+          
 jobs:
-  my-job:
+  setup:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Run the Another Workflow
-        run: |
-          echo "Running another workflow"
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.client_payload.ref }}
+      - run: echo ${{ github.event.client_payload.sha }}
 
 
 
