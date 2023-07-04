@@ -1,12 +1,12 @@
 name: Test
 
 on:
-  repository_dispatch:
+  workflow_dispatch:
     inputs:
       username:
         required: true
         type: string
-    secrets:
+      secrets:
       token:
         required: true
 
